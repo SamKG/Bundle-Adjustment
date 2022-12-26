@@ -27,3 +27,7 @@ The solutions will be output into the same working directory as the bundle adjus
 To evaluate the final loss for a solution, you may run:
 `python3 eval_reconstruction.py --solution <solutionfile>`
 
+# Caveats
+## Numerical Precision
+We do blocked matrix operations for efficiency. However, we do not implement any techniques to improve numerical precision of solutions. Since our matrices are large, this means that our computation is off from the ground truth by quite a bit, which may hurt convergence in some cases. 
+
